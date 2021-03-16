@@ -1,0 +1,38 @@
+.status-bar{
+    display: flex;
+    justify-content: center;
+    padding: 5px 3px;
+
+}
+
+/* 
+ .status-bar 를 확인해보면 가운데 시계가 가운데서 약간 빗나간것을 확인할 수 있다. 
+이는 No service 와 시계와 베터리의 width 가 각각 다르기 때문이다. 이를 해결하기위해서 
+css-hack 기술을 사용하면 된다.  
+
+justify-content: between 을 center로 바꾼후 모든 column에 33%의 width를 가지게 하자 
+*/
+
+.status-bar__column{
+    width:33%;
+}
+
+.status-bar__column:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+
+.status-bar__column:nth-child(3){
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.status-bar__column:first-child span{
+    margin-right: 5px;
+}
+
+
+.status-bar__column .fa-battery-full{
+    margin: 0px 5px;
+}
